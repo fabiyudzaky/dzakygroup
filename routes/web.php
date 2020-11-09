@@ -24,3 +24,6 @@ Route::get('/freepik_lisence/create', [FreepikLisenceController::class, 'create'
     ->name('freepik_lisence.create');
 Route::post('/freepik_lisence/store', [FreepikLisenceController::class, 'store'])
     ->name('freepik_lisence.store');
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
