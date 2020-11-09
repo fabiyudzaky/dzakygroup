@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FreepikLisenceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/freepik_lisence', [FreepikLisenceController::class, 'index'])
+    ->name('freepik_lisence.index');
+Route::get('/freepik_lisence/create', [FreepikLisenceController::class, 'create'])
+    ->name('freepik_lisence.create');
+Route::post('/freepik_lisence/store', [FreepikLisenceController::class, 'store'])
+    ->name('freepik_lisence.store');
